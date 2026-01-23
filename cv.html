@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luong NGUYEN - Senior AI & Cybersecurity Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --ink-light: #4a4a4a;
+            --ink-subtle: #7a7a7a;
+            --paper: #fafcfb;
+            --paper-warm: #f0f5f3;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --rule: #d1d5db;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .page {
+                box-shadow: none !important;
+                margin: 0 !important;
+            }
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #e8e6e1;
+            color: var(--ink);
+            font-size: 9pt;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: var(--paper);
+            margin: 20px auto;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative corner accent */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, transparent 50%, var(--accent) 50%);
+            opacity: 0.12;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2.2fr;
+            height: 297mm;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 24px 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent);
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .profile-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+        }
+
+        .sidebar-section {
+            margin-bottom: 16px;
+        }
+
+        .sidebar-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 7.5pt;
+        }
+
+        .contact-icon {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+            opacity: 0.7;
+            margin-top: 1px;
+        }
+
+        .contact-text {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.3;
+        }
+
+        .contact-text a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-label {
+            font-size: 6.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-tag {
+            font-size: 6.5pt;
+            padding: 2px 6px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .skill-tag.highlight {
+            background: var(--accent);
+            color: white;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            font-size: 7.5pt;
+        }
+
+        .language-name {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .language-level {
+            font-size: 6.5pt;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .publication-item {
+            font-size: 6.5pt;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 6px;
+            padding-left: 8px;
+            border-left: 2px solid var(--accent);
+            line-height: 1.35;
+        }
+
+        /* Main Content */
+        .main {
+            padding: 24px 28px;
+            background: var(--paper);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--ink);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28pt;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .title {
+            font-size: 9pt;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .summary {
+            margin-bottom: 16px;
+            padding: 12px 14px;
+            background: var(--paper-warm);
+            border-left: 3px solid var(--accent);
+            font-size: 8pt;
+            color: var(--ink-light);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--ink);
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--rule);
+            font-weight: 600;
+        }
+
+        .experience-item {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .company {
+            font-weight: 600;
+            font-size: 9pt;
+            color: var(--ink);
+        }
+
+        .period {
+            font-size: 7pt;
+            color: var(--ink-subtle);
+            font-style: italic;
+        }
+
+        .role {
+            font-size: 8pt;
+            color: var(--accent-dark);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .location {
+            font-size: 7pt;
+            color: var(--ink-subtle);
+            margin-bottom: 4px;
+        }
+
+        .experience-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-content li {
+            font-size: 7.5pt;
+            color: var(--ink-light);
+            margin-bottom: 2px;
+            padding-left: 10px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .experience-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 3px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .projects-label {
+            font-size: 6.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-subtle);
+            margin-top: 5px;
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .project-tag {
+            font-size: 6pt;
+            padding: 2px 6px;
+            background: var(--paper-warm);
+            border: 1px solid var(--rule);
+            border-radius: 2px;
+            color: var(--ink-light);
+        }
+
+        .tech-stack {
+            font-size: 6.5pt;
+            color: var(--ink-subtle);
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .degree {
+            font-weight: 600;
+            font-size: 8pt;
+            color: var(--ink);
+        }
+
+        .institution {
+            font-size: 7.5pt;
+            color: var(--accent-dark);
+        }
+
+        .edu-period {
+            font-size: 7pt;
+            color: var(--ink-subtle);
+            font-style: italic;
+        }
+
+        /* Footer */
+        .page-footer {
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 6.5pt;
+            color: var(--ink-subtle);
+        }
+
+        .page-footer a {
+            color: var(--accent-dark);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <img src="a8.png" alt="Luong NGUYEN" class="profile-photo">
+                    <div class="tagline">AI & Security</div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Contact</div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span class="contact-text">+33 6 51 56 82 89</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span class="contact-text"><a href="mailto:luongnv89@gmail.com">luongnv89@gmail.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span class="contact-text">Paris, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span class="contact-text"><a href="https://luongnv.com">luongnv.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        <span class="contact-text"><a href="https://linkedin.com/in/luongnv89">linkedin.com/in/luongnv89</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        <span class="contact-text"><a href="https://github.com/luongnv89">github.com/luongnv89</a></span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Core Expertise</div>
+                    <div class="skill-category">
+                        <div class="skill-label">AI & Machine Learning</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">LLMs</span>
+                            <span class="skill-tag highlight">LangChain</span>
+                            <span class="skill-tag highlight">LangGraph</span>
+                            <span class="skill-tag">AI Agents</span>
+                            <span class="skill-tag">Fine-tuning</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-label">Security</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Network Security</span>
+                            <span class="skill-tag">DPI</span>
+                            <span class="skill-tag">Threat Detection</span>
+                            <span class="skill-tag">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-label">Development</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Languages</div>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Professional</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">French</span>
+                        <span class="language-level">Working</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Vietnamese</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Publications</div>
+                    <div class="publication-item">Digital Twin for IoT Environments: A Testing and Simulation Tool</div>
+                    <div class="publication-item">SINDIT: Knowledge Graph-Based Digital Twins in Smart Manufacturing</div>
+                    <div class="publication-item">LLMs in Security Testing and Monitoring: An Initial Study</div>
+                    <div class="publication-item">Reliable Detection of Interest Flooding Attack in NDN</div>
+                    <div class="publication-item">DPWSim: Simulation toolkit for IoT applications</div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main">
+                <header class="header">
+                    <h1 class="name">Luong NGUYEN</h1>
+                    <div class="title">Senior AI & Cybersecurity Engineer</div>
+                </header>
+
+                <div class="summary">
+                    Software engineer with 10+ years of experience building secure, intelligent solutions for network security and industrial automation. Expert in integrating LLMs and AI agents into production systems. Track record of leading European R&D projects with major industry partners.
+                </div>
+
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="company">Montimage</span>
+                            <span class="period">May 2015 – Present</span>
+                        </div>
+                        <div class="role">Senior Research & Development Engineer</div>
+                        <div class="location">Paris, France</div>
+                        <div class="experience-content">
+                            <ul>
+                                <li>Lead development of AI/ML-powered solutions for network security and automation across multiple European research projects</li>
+                                <li>Fine-tune LLMs and build intelligent agents powering anti-phishing services and real-time security alerting</li>
+                                <li>Integrate advanced AI technologies (LangGraph, LangChain) into scalable SaaS applications</li>
+                                <li>Established SCRUM, CI/CD pipelines, and automated testing, improving delivery efficiency by 40%</li>
+                            </ul>
+                            <div class="projects-label">Key European Projects</div>
+                            <div class="project-tags">
+                                <span class="project-tag">COGNIMAN – AI/ML Digital Twin</span>
+                                <span class="project-tag">CyberSuite – AI Security Tools</span>
+                                <span class="project-tag">Puzzle – ACAS Security Analytics</span>
+                                <span class="project-tag">Geiger – Mobile Cybersecurity</span>
+                                <span class="project-tag">ENACT/DigitBrain – IoT ML</span>
+                            </div>
+                            <div class="tech-stack">Tech: Python, LangChain, LangGraph, JavaScript, Node.js, React, C/C++, Docker, Flutter</div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="company">Percevio</span>
+                            <span class="period">Mar 2014 – Feb 2016</span>
+                        </div>
+                        <div class="role">Full-Stack Developer</div>
+                        <div class="location">Paris, France</div>
+                        <div class="experience-content">
+                            <ul>
+                                <li>Pioneered browser-based content delivery network using WebRTC APIs</li>
+                                <li>Developed video conferencing platform, P2P file sharing, and live broadcasting solutions</li>
+                            </ul>
+                            <div class="tech-stack">Tech: WebRTC, Express.js, JavaScript, MongoDB, Web APIs</div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="company">lebondrive.fr</span>
+                            <span class="period">Jun – Sep 2013</span>
+                        </div>
+                        <div class="role">Java Developer</div>
+                        <div class="location">Evry, France</div>
+                        <div class="experience-content">
+                            <ul>
+                                <li>Built web crawler for price comparison with parallel computing optimization</li>
+                            </ul>
+                            <div class="tech-stack">Tech: Java, HTTPClient, Jsoup, Parallel Computing</div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="company">FPT Software / VTC Online</span>
+                            <span class="period">May 2011 – Apr 2012</span>
+                        </div>
+                        <div class="role">Software Developer</div>
+                        <div class="location">Hanoi, Vietnam</div>
+                        <div class="experience-content">
+                            <ul>
+                                <li>Developed Java and Android applications; led small development teams</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-item">
+                        <div class="degree">MSc, Software Engineering for Ambient Intelligence</div>
+                        <div class="institution">Institut National des Télécommunications</div>
+                        <div class="edu-period">2012 – 2014</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Engineer's Degree, Computer Science</div>
+                        <div class="institution">Hanoi University of Science and Technology</div>
+                        <div class="edu-period">2007 – 2012</div>
+                    </div>
+                </section>
+
+                <div class="page-footer">
+                    <span>Luong NGUYEN • Senior AI & Cybersecurity Engineer</span>
+                    <span><a href="https://luongnv.com">luongnv.com</a></span>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
