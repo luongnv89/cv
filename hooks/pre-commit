@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Check if cv.html or a8.png has been modified
+if git diff --cached --name-only | grep -qE "^(cv\.html|a8\.png)$"; then
+    echo "CV files changed, generating PDF..."
+
+    # Generate timestamp
+    TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+
+    # Install dependencies if needed
+    if [ ! -d "node_modules" ]; then
+        npm install --silent
+    fi
+
+    # Generate PDFs
+    node -e "
+    const puppeteer = require('puppeteer');
+    const path = require('path');
+
+    async function generatePDF() {
+        const timestamp = '$TIMESTAMP';
+        const browser = await puppeteer.launch({
+            headless: 'new',
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
+
+        const page = await browser.newPage();
+        const htmlPath = path.join(process.cwd(), 'cv.html');
+
+        await page.goto('file://' + htmlPath, {
+            waitUntil: 'networkidle0'
+        });
+
+        // Generate default PDF
+        await page.pdf({
+            path: 'Luong_NGUYEN_CV.pdf',
+            format: 'A4',
+            printBackground: true,
+            margin: { top: '0', right: '0', bottom: '0', left: '0' }
+        });
+
+        // Generate timestamped PDF for history
+        await page.pdf({
+            path: 'history/Luong_NGUYEN_CV_' + timestamp + '.pdf',
+            format: 'A4',
+            printBackground: true,
+            margin: { top: '0', right: '0', bottom: '0', left: '0' }
+        });
+
+        await browser.close();
+    }
+
+    generatePDF().catch(e => { console.error(e); process.exit(1); });
+    "
+
+    if [ $? -ne 0 ]; then
+        echo "PDF generation failed!"
+        exit 1
+    fi
+
+    # Copy HTML files
+    cp cv.html Luong_NGUYEN_CV.html
+    cp cv.html "history/Luong_NGUYEN_CV_${TIMESTAMP}.html"
+
+    # Add generated files to commit
+    git add Luong_NGUYEN_CV.pdf Luong_NGUYEN_CV.html history/
+
+    echo "CV generated: Luong_NGUYEN_CV.pdf, Luong_NGUYEN_CV.html"
+    echo "History: history/Luong_NGUYEN_CV_${TIMESTAMP}.pdf, history/Luong_NGUYEN_CV_${TIMESTAMP}.html"
+fi

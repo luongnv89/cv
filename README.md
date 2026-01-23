@@ -2,22 +2,26 @@
 
 Personal CV/Resume with automated PDF generation.
 
-## Usage
-
-### Local Generation
+## Setup
 
 ```bash
 npm install
-node generate-pdf.js
+git config core.hooksPath hooks
 ```
 
-### Auto Generation
+## Usage
 
-Push changes to `main` branch. GitHub Actions will automatically generate:
+Edit `cv.html` and commit. The pre-commit hook automatically generates:
 
 - `Luong_NGUYEN_CV.pdf` - Latest version
 - `Luong_NGUYEN_CV.html` - Latest version
 - `history/` - Timestamped versions
+
+### Manual Generation
+
+```bash
+node generate-pdf.js
+```
 
 ## Files
 
@@ -25,4 +29,5 @@ Push changes to `main` branch. GitHub Actions will automatically generate:
 |------|-------------|
 | `cv.html` | CV source (edit this) |
 | `a8.png` | Profile photo |
-| `generate-pdf.js` | PDF generator script |
+| `generate-pdf.js` | Manual PDF generator |
+| `hooks/pre-commit` | Auto-generation hook |
