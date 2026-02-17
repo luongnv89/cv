@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <style>
+      .wordmark { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; font-size: 28px; font-weight: 700; fill: #000000; }
+      .tagline { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; font-size: 11px; font-weight: 400; fill: #6B7280; }
+    </style>
+  </defs>
+  <!-- Symbol: Document with person silhouette -->
+  <g transform="translate(24, 10)">
+    <!-- Document page with folded corner -->
+    <path d="M0 6 C0 2.7, 2.7 0, 6 0 L56 0 L72 18 L72 94 C72 97.3, 69.3 100, 66 100 L6 100 C2.7 100, 0 97.3, 0 94 Z" fill="none" stroke="#000000" stroke-width="3"/>
+    <!-- Folded corner -->
+    <path d="M56 0 L56 14 C56 16.2, 57.8 18, 60 18 L72 18" fill="none" stroke="#000000" stroke-width="2.5"/>
+    <!-- Person silhouette (head) -->
+    <circle cx="36" cy="36" r="12" fill="#22C55E"/>
+    <!-- Person silhouette (shoulders) -->
+    <path d="M16 68 C16 54, 28 48, 36 48 C44 48, 56 54, 56 68" fill="#22C55E" opacity="0.7"/>
+    <!-- Text lines below person -->
+    <rect x="14" y="76" width="44" height="3" rx="1.5" fill="#6B7280" opacity="0.5"/>
+    <rect x="20" y="84" width="32" height="3" rx="1.5" fill="#6B7280" opacity="0.35"/>
+    <rect x="18" y="92" width="36" height="3" rx="1.5" fill="#6B7280" opacity="0.2"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="120" y="62" class="wordmark">my-cv</text>
+  <text x="120" y="82" class="tagline">Automated CV/Resume generation</text>
+</svg>

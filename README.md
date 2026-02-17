@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.png" alt="my-cv Logo" width="400"></p>
+
 # My CV
 
 Personal CV/Resume with automated PDF generation.
