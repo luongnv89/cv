@@ -1,2 +1,7 @@
 node_modules/
 .DS_Store
+
+# Local drafts, not published
+/cv-variant-*.html
+/Luong_NGUYEN_CV_*.pdf
+/linkedin-review.md
