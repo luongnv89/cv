@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luong NGUYEN - Senior AI & Cybersecurity Engineer</title>
+    <title>Luong NGUYEN - Agentic AI & Security Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -224,15 +224,15 @@
 
         /* Main Content */
         .main {
-            padding: 28px 32px;
+            padding: 24px 32px;
             background: var(--paper);
             display: flex;
             flex-direction: column;
         }
 
         .header {
-            margin-bottom: 20px;
-            padding-bottom: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
             border-bottom: 2px solid var(--ink);
             position: relative;
         }
@@ -266,8 +266,8 @@
         }
 
         .summary {
-            margin-bottom: 20px;
-            padding: 14px 16px;
+            margin-bottom: 16px;
+            padding: 10px 14px;
             background: var(--paper-warm);
             border-left: 3px solid var(--accent);
             font-size: 9pt;
@@ -277,7 +277,7 @@
         }
 
         .section {
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }
 
         .section-title {
@@ -286,14 +286,14 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: var(--ink);
-            margin-bottom: 12px;
+            margin-bottom: 9px;
             padding-bottom: 5px;
             border-bottom: 1px solid var(--rule);
             font-weight: 600;
         }
 
         .experience-item {
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             position: relative;
         }
 
@@ -412,7 +412,7 @@
         /* Footer */
         .page-footer {
             margin-top: auto;
-            padding-top: 12px;
+            padding-top: 8px;
             border-top: 1px solid var(--rule);
             display: flex;
             justify-content: space-between;
@@ -425,6 +425,57 @@
             color: var(--accent-dark);
             text-decoration: none;
         }
+
+        .experience-content li strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .publication-venue {
+            display: block;
+            color: rgba(255,255,255,0.95);
+            font-weight: 600;
+        }
+
+        .section-note {
+            font-size: 7.5pt;
+            color: var(--ink-subtle);
+            margin-top: -6px;
+            margin-bottom: 8px;
+        }
+
+        .experience-item.compact {
+            margin-bottom: 8px;
+        }
+
+        .pub-item {
+            display: grid;
+            grid-template-columns: 76px 1fr;
+            gap: 8px;
+            font-size: 8pt;
+            color: var(--ink-light);
+            line-height: 1.4;
+            margin-bottom: 2px;
+        }
+
+        .pub-venue {
+            font-weight: 600;
+            color: var(--accent-dark);
+        }
+        .role-inline {
+            font-weight: 500;
+            font-size: 9pt;
+            color: var(--accent-dark);
+        }
+
+        .project-tags.dense {
+            gap: 3px;
+        }
+
+        .project-tags.dense .project-tag {
+            font-size: 6.5pt;
+            padding: 1px 5px;
+        }
     </style>
 </head>
 <body>
@@ -435,7 +486,7 @@
             <aside class="sidebar">
                 <div class="profile-section">
                     <img src="a8.png" alt="Luong NGUYEN" class="profile-photo">
-                    <div class="tagline">AI & Security</div>
+                    <div class="tagline">Agentic AI · Security</div>
                 </div>
 
                 <div class="sidebar-section">
@@ -481,34 +532,43 @@
                 <div class="sidebar-section">
                     <div class="sidebar-title">Core Expertise</div>
                     <div class="skill-category">
-                        <div class="skill-label">AI & Machine Learning</div>
+                        <div class="skill-label">Agentic AI & LLMs</div>
                         <div class="skill-tags">
-                            <span class="skill-tag highlight">LLMs</span>
-                            <span class="skill-tag highlight">LangChain</span>
-                            <span class="skill-tag highlight">LangGraph</span>
-                            <span class="skill-tag">AI Agents</span>
-                            <span class="skill-tag">Fine-tuning</span>
+                            <span class="skill-tag highlight">AI Agents</span>
+                            <span class="skill-tag highlight">MCP</span>
+                            <span class="skill-tag highlight">LLM Fine-tuning</span>
+                            <span class="skill-tag">LangGraph</span>
+                            <span class="skill-tag">RAG</span>
+                            <span class="skill-tag">Ollama / vLLM</span>
                         </div>
                     </div>
                     <div class="skill-category">
                         <div class="skill-label">Security</div>
                         <div class="skill-tags">
                             <span class="skill-tag highlight">Network Security</span>
-                            <span class="skill-tag">DPI</span>
-                            <span class="skill-tag">Threat Detection</span>
-                            <span class="skill-tag">Cybersecurity</span>
+                            <span class="skill-tag highlight">Deep Packet Inspection</span>
+                            <span class="skill-tag">Threat Intelligence</span>
+                            <span class="skill-tag">Phishing Defense</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <div class="skill-label">Development</div>
+                        <div class="skill-label">Digital Twins & IoT</div>
                         <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag highlight">Digital Twins</span>
+                            <span class="skill-tag">IoT Simulation</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-label">Engineering</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Python</span>
+                            <span class="skill-tag highlight">C/C++</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Swift</span>
                             <span class="skill-tag">React</span>
-                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">Node.js</span>
                             <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Kubernetes</span>
                         </div>
                     </div>
                 </div>
@@ -530,12 +590,9 @@
                 </div>
 
                 <div class="sidebar-section">
-                    <div class="sidebar-title">Publications</div>
-                    <div class="publication-item">Digital Twin for IoT Environments: A Testing and Simulation Tool</div>
-                    <div class="publication-item">SINDIT: Knowledge Graph-Based Digital Twins in Smart Manufacturing</div>
-                    <div class="publication-item">LLMs in Security Testing and Monitoring: An Initial Study</div>
-                    <div class="publication-item">Reliable Detection of Interest Flooding Attack in NDN</div>
-                    <div class="publication-item">DPWSim: Simulation toolkit for IoT applications</div>
+                    <div class="sidebar-title">Education</div>
+                    <div class="publication-item"><span class="publication-venue">MSc, Software Engineering for Ambient Intelligence</span>Télécom SudParis · 2012 – 2014</div>
+                    <div class="publication-item"><span class="publication-venue">Engineer's Degree, Computer Science</span>Hanoi University of Science and Technology · 2007 – 2012</div>
                 </div>
             </aside>
 
@@ -543,11 +600,11 @@
             <main class="main">
                 <header class="header">
                     <h1 class="name">Luong NGUYEN</h1>
-                    <div class="title">Senior AI & Cybersecurity Engineer</div>
+                    <div class="title">Agentic AI & Security Engineer</div>
                 </header>
 
                 <div class="summary">
-                    Software engineer with 10+ years of experience building secure, intelligent solutions for network security and industrial automation. Expert in integrating LLMs and AI agents into production systems. Track record of leading European R&D projects with major industry partners.
+                    Senior software engineer with 15+ years in security and AI, from packet inspection in C to fine-tuned language models and AI agents. Lead developer on EU R&D projects; author of claude-howto (40k+ GitHub stars).
                 </div>
 
                 <section class="section">
@@ -556,67 +613,50 @@
                     <div class="experience-item">
                         <div class="experience-header">
                             <span class="company">Montimage</span>
-                            <span class="period">May 2015 – Present</span>
+                            <span class="period">2014 – Present</span>
                         </div>
-                        <div class="role">Senior Research & Development Engineer</div>
-                        <div class="location">Paris, France</div>
+                        <div class="role">Senior Software Engineer · Paris, France</div>
                         <div class="experience-content">
                             <ul>
-                                <li>Lead development of AI/ML-powered solutions for network security and automation across multiple European research projects</li>
-                                <li>Fine-tune LLMs and build intelligent agents powering anti-phishing services and real-time security alerting</li>
-                                <li>Integrate advanced AI technologies (LangGraph, LangChain) into scalable SaaS applications</li>
-                                <li>Established SCRUM, CI/CD pipelines, and automated testing, improving delivery efficiency by 40%</li>
+                                <li><strong>LLM adaptation:</strong> Built a fine-tuning pipeline for security-focused small models (synthetic data, LLM-as-judge, Unsloth/LoRA), run locally via Ollama for phishing detection</li>
+                                <li><strong>MCP servers:</strong> Created mitre-mcp and sec-mcp (PyPI, official MCP Registry), giving AI assistants MITRE ATT&CK knowledge and threat-intelligence checks</li>
+                                <li><strong>Network security:</strong> Lead developer of MMT-DPI, Montimage's C deep packet inspection engine (~80% of commits since 2015), incl. its 2026 hardening overhaul</li>
+                                <li><strong>Phishing defense:</strong> Built a gamified awareness-training platform (5 languages), an LLM-based email analysis service and the GEIGER cyber range (900+ users)</li>
+                                <li><strong>Digital twins:</strong> Lead developer of COGNIMAN industrial pilot software and the secSIM cybersecurity twin platform; sole developer of the TaS IoT test platform</li>
+                                <li><strong>Community:</strong> Organizing Committee, IEEE CloudCom 2026 and IFIP ICTSS 2026 (Paris); built both conferences' registration and payment platforms</li>
                             </ul>
-                            <div class="projects-label">Key European Projects</div>
-                            <div class="project-tags">
-                                <span class="project-tag">COGNIMAN – AI/ML Digital Twin</span>
-                                <span class="project-tag">CyberSuite – AI Security Tools</span>
-                                <span class="project-tag">Puzzle – ACAS Security Analytics</span>
-                                <span class="project-tag">Geiger – Mobile Cybersecurity</span>
-                                <span class="project-tag">ENACT/DigitBrain – IoT ML</span>
+                            <div class="projects-label">EU R&D Projects (H2020 · Horizon Europe · Digital Europe)</div>
+                            <div class="project-tags dense">
+                                <span class="project-tag">COGNIMAN</span>
+                                <span class="project-tag">SECASSURED</span>
+                                <span class="project-tag">AIAgent4Cyber</span>
+                                <span class="project-tag">NERO</span>
+                                <span class="project-tag">CyberSuite</span>
+                                <span class="project-tag">INTACT</span>
+                                <span class="project-tag">GEIGER</span>
+                                <span class="project-tag">PUZZLE</span>
+                                <span class="project-tag">ENACT</span>
                             </div>
-                            <div class="tech-stack">Tech: Python, LangChain, LangGraph, JavaScript, Node.js, React, C/C++, Docker, Flutter</div>
                         </div>
                     </div>
 
-                    <div class="experience-item">
+                    <div class="experience-item compact">
                         <div class="experience-header">
-                            <span class="company">Percevio</span>
+                            <span class="company">Percevio <span class="role-inline">· Full-Stack Developer · Paris</span></span>
                             <span class="period">Mar 2014 – Feb 2016</span>
                         </div>
-                        <div class="role">Full-Stack Developer</div>
-                        <div class="location">Paris, France</div>
                         <div class="experience-content">
                             <ul>
-                                <li>Pioneered browser-based content delivery network using WebRTC APIs</li>
-                                <li>Developed video conferencing platform, P2P file sharing, and live broadcasting solutions</li>
+                                <li>WebRTC-based P2P content delivery network, video conferencing and live broadcasting</li>
                             </ul>
-                            <div class="tech-stack">Tech: WebRTC, Express.js, JavaScript, MongoDB, Web APIs</div>
                         </div>
                     </div>
 
-                    <div class="experience-item">
+                    <div class="experience-item compact">
                         <div class="experience-header">
-                            <span class="company">lebondrive.fr</span>
-                            <span class="period">Jun – Sep 2013</span>
-                        </div>
-                        <div class="role">Java Developer</div>
-                        <div class="location">Evry, France</div>
-                        <div class="experience-content">
-                            <ul>
-                                <li>Built web crawler for price comparison with parallel computing optimization</li>
-                            </ul>
-                            <div class="tech-stack">Tech: Java, HTTPClient, Jsoup, Parallel Computing</div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <span class="company">FPT Software / VTC Online</span>
+                            <span class="company">FPT Software / VTC Online <span class="role-inline">· Software Developer · Hanoi</span></span>
                             <span class="period">May 2011 – Apr 2012</span>
                         </div>
-                        <div class="role">Software Developer</div>
-                        <div class="location">Hanoi, Vietnam</div>
                         <div class="experience-content">
                             <ul>
                                 <li>Developed Java and Android applications; led small development teams</li>
@@ -626,21 +666,31 @@
                 </section>
 
                 <section class="section">
-                    <h2 class="section-title">Education</h2>
-                    <div class="education-item">
-                        <div class="degree">MSc, Software Engineering for Ambient Intelligence</div>
-                        <div class="institution">Institut National des Télécommunications</div>
-                        <div class="edu-period">2012 – 2014</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="degree">Engineer's Degree, Computer Science</div>
-                        <div class="institution">Hanoi University of Science and Technology</div>
-                        <div class="edu-period">2007 – 2012</div>
+                    <h2 class="section-title">Open Source & Products</h2>
+                    <div class="section-note">43k+ GitHub stars · ~1k followers · github.com/luongnv89</div>
+                    <div class="experience-content">
+                        <ul>
+                            <li><strong>claude-howto:</strong> Visual guide to Claude Code; 40k+ stars, 5k+ forks, #1 on GitHub Trending</li>
+                            <li><strong>asm:</strong> Skill manager for AI coding agents across 21 platforms (npm); 900+ stars</li>
+                            <li><strong>Agent tooling:</strong> pi-extensions, skills, context-stats and sleek-ui; each 100+ stars</li>
+                            <li><strong>Apps:</strong> Ask Milo, TextWiz, CUStats (App Store); VS Code extensions, 2,000+ installs</li>
+                        </ul>
                     </div>
                 </section>
 
+                <section class="section">
+                    <h2 class="section-title">Selected Publications</h2>
+                    <div class="pub-item"><span class="pub-venue">ICTSS 2026</span><span>SecSIM: A Digital Twin Management System for Simulation-Driven Cybersecurity Assessment</span></div>
+                    <div class="pub-item"><span class="pub-venue">ARES 2025</span><span>LLMs in Security Testing and Monitoring: An Initial Study</span></div>
+                    <div class="pub-item"><span class="pub-venue">IFIP IoT 2024</span><span>SINDIT: A Framework for Knowledge Graph-Based Digital Twins in Smart Manufacturing</span></div>
+                    <div class="pub-item"><span class="pub-venue">QUATIC 2022</span><span>Digital Twin for IoT Environments: A Testing and Simulation Tool</span></div>
+                    <div class="pub-item"><span class="pub-venue">Book, 2021</span><span>Validation, Verification and Root-Cause Analysis, in <em>DevOps for Trustworthy Smart IoT Systems</em></span></div>
+                    <div class="pub-item"><span class="pub-venue">IEEE TIFS 2019</span><span>Reliable Detection of Interest Flooding Attack in Real Deployment of Named Data Networking</span></div>
+                    <div class="pub-item"><span class="pub-venue">WF-IoT 2014</span><span>DPWSim: A Simulation Toolkit for IoT Applications Using Devices Profile for Web Services</span></div>
+                </section>
+
                 <div class="page-footer">
-                    <span>Luong NGUYEN • Senior AI & Cybersecurity Engineer</span>
+                    <span>Luong NGUYEN • Agentic AI & Security Engineer</span>
                     <span><a href="https://luongnv.com">luongnv.com</a></span>
                 </div>
             </main>
